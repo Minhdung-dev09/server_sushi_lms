@@ -3,6 +3,12 @@ const mongoose = require("mongoose");
 const LectureSchema = new mongoose.Schema({
   title: String,
   videoUrl: String,
+  linkUrl: String, // Thêm trường cho link
+  type: {
+    type: String,
+    enum: ["video", "link"],
+    default: "video"
+  },
   public_id: String,
   freePreview: Boolean,
 });
